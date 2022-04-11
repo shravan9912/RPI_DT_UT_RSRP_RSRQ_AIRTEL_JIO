@@ -6,3 +6,4 @@
 # pip install speedtest-cli
 # pip install Tk
 # pip install os
+# python run.py
