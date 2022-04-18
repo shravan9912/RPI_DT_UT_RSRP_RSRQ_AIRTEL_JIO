@@ -17,7 +17,7 @@ def dsusonly():
     st=current_time=datetime.datetime.now()
     wifi  = speedtest.Speedtest()
     ststr=str(st)
-    pdfkit.from_url('http://192.168.1.1/index.html',"signal/"+ststr+"start.pdf")
+    pdfkit.from_url('http://192.168.1.1/',"signal/"+ststr+"start.pdf")
     ds=(wifi.download()/1024)/1024
     us=(wifi.upload()/1024)/1024    #print("Wifi Download Speed is ", wifi.download())
     delay=wifi.results.ping
@@ -38,6 +38,6 @@ top = Tkinter.Tk()
 # Code to add widgets will go here...
 #B = Tkinter.Button(top, text ="Speed Test", command = dsus)
 #B.pack()
-B = Tkinter.Button(top, text ="Speed Test Only", command = dsusonly)
+B = Tkinter.Button(top, text ="Speed and Signal Test", command = dsusonly)
 B.pack()
 top.mainloop()
