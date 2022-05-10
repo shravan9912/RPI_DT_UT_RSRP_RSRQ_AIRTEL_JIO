@@ -1,0 +1,56 @@
+Mon APR.18 15:04 Mobile Ul Help admin Log Out
+
+? airtel my wifi SZ wil cre th >
+
+HOME WLAN Clients SMS UPDATE SETTINGS CONTACTS SD Card Check 4G Usage
+
+ 
+
+Quick Setup ‘ .
+Device Information
+WAN EE tintin
+Security
+System Device name: Airtel my MiFi
++ Device Information Model ID: AMF-311.WW
+
+ 
+
+TRO69
+
+Serial Number: MFAT220910191222
+Modify Password
+
+IMEI: 355501973964511
+SD Card Setting
+Restore Defaults IMSI: 404490608946554
+Reboot Mobile number: = Unknown 2)
+
+Hardware version: Airtel AMF-311WW.MO1
+Software version: AMF-311WW_1.0.0B10_ 020720
+Web Ul version: = Airtel AMF-311WW.W10
+
+OS version: Linux version 3.18.20
+
+LAN MAC Address: FC-DD-55-9F-D9-CF
+
+WAN IP Address: 100.91.140.185
+
+WAN IPv6 Address:2401:4900:4e10:79e4:ec62:acbd:35bc:c4ea
+
+PLMN: 40449
+CELL_ID: 233523713
+RSSI: -80dB
+EARFCN: 1415
+
+PCI: 66
+
+RSRP: -110dBm
+RSRQ: -10dB
+SINR: 11dB
+
+Customer Support : 1800 103 0405
+
+” @airtel India 2020, All Rights Reserved. Copyright Notice
+
+ 
+

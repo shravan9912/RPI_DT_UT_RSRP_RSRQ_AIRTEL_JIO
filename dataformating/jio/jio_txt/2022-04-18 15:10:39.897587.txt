@@ -1,0 +1,76 @@
+ 
+
+aes) EelIUIS)
+
+ 
+
+LAN Info
+
+WAN Info
+
+Device Details
+
+System Performance
+
+LTE Status
+
+Basic Information
+
+Connected Status
+
+Connection Time
+
+Network Information
+
+Operating Mode
+
+Operation Band
+
+Bandwidth
+
+EARFCN
+
+Physical Cell ID
+
+PLMN
+
+APN In Use
+
+Global Cell ID
+
+ECGI
+
+RSRP
+
+RSRQ
+
+SINR
+
+Attached
+
+00:05:44
+
+TDD
+
+Band40
+
+20MHz
+
+38948
+
+21
+
+405854
+
+jionet
+
+6305813
+
+405854006f0603815
+
+-117dBm
+
+-10dB
+
+6dB
+
