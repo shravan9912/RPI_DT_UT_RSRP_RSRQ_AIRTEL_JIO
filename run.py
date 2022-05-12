@@ -21,7 +21,7 @@ def dsusonly():
     file_size = os.path.getsize("signaltestonly/"+ststr+".pdf")
     int(file_size)
     while file_size < 20048:
-       pdfkit.from_url('http://192.168.1.1/',"signaltestonly/"+ststr+".pdf")
+       pdfkit.from_url('http://192.168.1.1/index.html',"signaltestonly/"+ststr+".pdf")
        file_size = os.path.getsize("signaltestonly/"+ststr+".pdf")
     ds=(wifi.download()/1024)/1024
     us=(wifi.upload()/1024)/1024    #print("Wifi Download Speed is ", wifi.download())
