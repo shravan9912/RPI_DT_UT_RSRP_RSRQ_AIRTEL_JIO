@@ -17,7 +17,7 @@ def dsusonly():
     st=current_time=datetime.datetime.now()
     wifi  = speedtest.Speedtest()
     ststr=str(st)
-    pdfkit.from_url('http://192.168.1.1/',"signal/"+ststr+".pdf")
+    pdfkit.from_url('http://192.168.1.1/index.html',"signal/"+ststr+".pdf")
     file_size = os.path.getsize("signaltestonly/"+ststr+".pdf")
     int(file_size)
     while file_size < 20048:
@@ -32,7 +32,7 @@ def dsusonly():
     file_size = os.path.getsize("signaltestonly/"+etstr+".pdf")
     int(file_size)
     while file_size < 20048:
-       pdfkit.from_url('http://192.168.1.1/',"signaltestonly/"+etstr+".pdf")
+       pdfkit.from_url('http://192.168.1.1/index.html',"signaltestonly/"+etstr+".pdf")
        file_size = os.path.getsize("signaltestonly/"+etstr+".pdf")
     filename = "dsus_entry.csv"
     with open(filename, 'a') as csvfile:
