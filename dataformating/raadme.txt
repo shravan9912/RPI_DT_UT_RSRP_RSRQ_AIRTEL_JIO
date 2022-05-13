@@ -10,3 +10,16 @@ which is final outcome of data format
 Thank you
 
 authers: Pattiwar Shravan kumar, Dr Paresh Saxena, Dr Ozgu Alay
+
+
+  #Libraries:
+#pip install pillow
+#pip install pytesseract
+if not working
+#pip install -U git+https://github.com/madmaze/pytesseract.git
+if getting some error than
+#git clone https://github.com/madmaze/pytesseract.git
+#cd pytesseract && pip install -U
+#pip install pdf2image
+#pip install pandas
+
