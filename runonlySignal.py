@@ -20,7 +20,7 @@ def signalonly():
     file_size = os.path.getsize("signaltestonly/"+ststr+".pdf")
     int(file_size)
     while file_size < 20048:
-       pdfkit.from_url('http://192.168.1.1/',"signaltestonly/"+ststr+".pdf")
+       pdfkit.from_url('http://192.168.1.1/index.html',"signaltestonly/"+ststr+".pdf")
        file_size = os.path.getsize("signaltestonly/"+ststr+".pdf")
     et=current_time=datetime.datetime.now()
     etstr=str(et)
@@ -28,7 +28,7 @@ def signalonly():
     file_size = os.path.getsize("signaltestonly/"+etstr+".pdf")
     int(file_size)
     while file_size < 20048:
-       pdfkit.from_url('http://192.168.1.1/',"signaltestonly/"+etstr+".pdf")
+       pdfkit.from_url('http://192.168.1.1/index.html',"signaltestonly/"+etstr+".pdf")
        file_size = os.path.getsize("signaltestonly/"+etstr+".pdf")
     print("Signal test Completed")
     print("----------------------")
