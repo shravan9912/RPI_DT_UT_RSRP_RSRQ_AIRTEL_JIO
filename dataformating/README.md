@@ -13,16 +13,16 @@ authers: Pattiwar Shravan kumar, Dr Paresh Saxena, Dr Ozgu Alay
 
 
   #Libraries:
-#pip install pillow
-#pip install pytesseract
+# pip install pillow
+# pip install pytesseract
 if not working
-#pip install -U git+https://github.com/madmaze/pytesseract.git
+# pip install -U git+https://github.com/madmaze/pytesseract.git
 if getting some error than
-#git clone https://github.com/madmaze/pytesseract.git
-#cd pytesseract && pip install -U
+# git clone https://github.com/madmaze/pytesseract.git
+# cd pytesseract && pip install -U
 if still not working do the following
-#and copy pytesserect folder from lib of the github and paste into your systems below folder
-#open home/.local/.lib/python3/site-packages/
-#pip install pdf2image
-#pip install pandas
+# and copy pytesserect folder from lib of the github and paste into your systems below folder
+# open home/.local/.lib/python3/site-packages/
+# pip install pdf2image
+# pip install pandas
 
