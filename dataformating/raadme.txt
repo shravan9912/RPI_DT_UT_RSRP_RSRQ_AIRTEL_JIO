@@ -20,6 +20,9 @@ if not working
 if getting some error than
 #git clone https://github.com/madmaze/pytesseract.git
 #cd pytesseract && pip install -U
+if still not working do the following
+#and copy pytesserect folder from lib of the github and paste into your systems below folder
+#open home/.local/.lib/python3/site-packages/
 #pip install pdf2image
 #pip install pandas
 
