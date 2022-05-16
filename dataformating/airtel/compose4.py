@@ -7,6 +7,7 @@ import os
 import csv
 import pandas as pd
 import ast
+import linecache
 
 def pdftotxtt(filenames):
         # Path of the pdf
@@ -85,31 +86,51 @@ def pdftotxtt(filenames):
     f.close()
     return filenames
 
-def readtext(filenames,filenames2):
-    txtfile=str("airtel_txt/"+filenames1+".txt")
+def readtext(filename1,filenames2):
     ilist=[]
     k=1
-    with open(txtfile) as file:
-       # reading each line    
-        for line in file:
-        # reading each word        
-         for word in line.split():
-            # displaying the words           
-               ilist.append(str(k))
-               ilist.append(word)
-               k=k+1
-    with open(txtfile) as file:
-      # reading each line    
-        for line in file:
-        # reading each word        
-         for word in line.split():
-            # displaying the words           
-               ilist.append(str(k))
-               ilist.append(word)
-               k=k+1
-   
-           # print(item)
+    txtfile1=str("airtel_txt/"+filenames1+".txt")
+    txtfile2=str("airtel_txt/"+filenames2+".txt")
+    output1=""
+    with open(txtfile1) as f:
+      for line in f:
+        if not line.isspace():
+            output1+=line        
+    f= open(txtfile1,"w")
+    f.write(output1)
+    f.close()
+    output2=""
+    with open(txtfile2) as f:
+      for line in f:
+        if not line.isspace():
+            output2+=line        
+    f= open(txtfile2,"w")
+    f.write(output2)
+    f.close()
+    ilist=[]
+    # extracting the 5th line
+    for x in [24,25,26,27,28,29,30,31]:
+     particular_line = linecache.getline(txtfile1, x)
+     print(particular_line)
+     for word in particular_line.split():
+         # displaying the words           
+         ilist.append(word)
+    # print the particular line
     #print(ilist)
+    for x in [24,25,26,27,28,29,30,31]:
+     particular_line = linecache.getline(txtfile2, x)
+     h=0
+     for word in particular_line.split():
+         # displaying the words
+       if h==0:
+         f=str(word)+"_2"
+         #print(f)           
+         ilist.append(f)
+         h=1
+       else:
+         ilist.append(word)
+         h=1         
+    # print the particular line
     for idx, ele in enumerate(ilist):
             ilist[idx] = ele.replace('\n', '')
 
@@ -119,7 +140,7 @@ def readtext(filenames,filenames2):
     print(res_dct)
     print("")
     #print(res_dct['29'], res_dct['30'],res_dct['32'],res_dct['33'],res_dct['34'],res_dct['35'],res_dct['36'])
-    signallist=[res_dct['107'], res_dct['105'],res_dct['109'],res_dct['111'],res_dct['113'],res_dct['115'],res_dct['117'],res_dct['119'], res_dct['241'],res_dct['239'],res_dct['243'],res_dct['245'],res_dct['247'],res_dct['249'],res_dct['251'],res_dct['253']]
+    signallist=[res_dct.get('CELL_ID:'), res_dct.get('PLMN:'),res_dct.get('RSSI:'),res_dct.get('EARFCN:'),res_dct.get('PCI:'),res_dct.get('RSRP:'),res_dct.get('RSRQ:'),res_dct.get('SINR:'),res_dct.get('CELL_ID:'), res_dct.get('PLMN:_2'),res_dct.get('RSSI:_2'),res_dct.get('EARFCN:_2'),res_dct.get('PCI:_2'),res_dct.get('RSRP:_2'),res_dct.get('RSRQ:_2'),res_dct.get('SINR:_2')]
     return signallist
 
 def finalcsv(finallist):
@@ -152,6 +173,5 @@ while i < linec:
 
  finalcsv(finallist)
  i=i+1
-
 
 
