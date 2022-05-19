@@ -6,6 +6,8 @@ from pdf2image import convert_from_path
 import os
 import csv
 import pandas as pd
+import ast
+import linecache
 
 def pdftotxtt(filenames):
         # Path of the pdf
@@ -84,25 +86,47 @@ def pdftotxtt(filenames):
     f.close()
     return filenames
 
-def readtext(filenames,filenames2):
-    txtfile=str("jio_txt/"+filenames1+".txt")
+def readtext(filename1,filenames2):
     ilist=[]
     k=1
-    with open(txtfile) as file:
-        for item in file:
-            if (item != " \n") and (item != "\n") and (item != "\x0c"):
-               ilist.append(str(k))
-               ilist.append(item)
-               k=k+1
-    with open(txtfile) as file:
-        for item in file:
-            if (item != " \n") and (item != "\n") and (item != "\x0c"):
-               ilist.append(str(k))
-               ilist.append(item)
-               k=k+1
-  
-           # print(item)
+    txtfile1=str("jio_txt/"+filenames1+".txt")
+    txtfile2=str("jio_txt/"+filenames2+".txt")
+    output1=""
+    with open(txtfile1) as f:
+      for line in f:
+        if not line.isspace():
+            output1+=line        
+    f= open(txtfile1,"w")
+    f.write(output1)
+    f.close()
+    output2=""
+    with open(txtfile2) as f:
+      for line in f:
+        if not line.isspace():
+            output2+=line        
+    f= open(txtfile2,"w")
+    f.write(output2)
+    f.close()
+    ilist=[]
+    kn=1
+    # extracting the 5th line
+    for x in [27,28,29,30,32,33,34,35,36]:
+     particular_line = linecache.getline(txtfile1, x)
+     print(particular_line)
+     ilist.append(str(kn))
+     # displaying the words           
+     ilist.append(particular_line)
+     kn=kn+1
+    # print the particular line
     #print(ilist)
+    kn=1
+    for x in [27,28,29,30,32,33,34,35,36]:
+     particular_line = linecache.getline(txtfile2, x)
+     ilist.append(str(kn)+'_2')
+     # displaying the words           
+     ilist.append(particular_line)
+     kn=kn+1         
+    # print the particular line
     for idx, ele in enumerate(ilist):
             ilist[idx] = ele.replace('\n', '')
 
@@ -112,7 +136,7 @@ def readtext(filenames,filenames2):
     print(res_dct)
     print("")
     #print(res_dct['29'], res_dct['30'],res_dct['32'],res_dct['33'],res_dct['34'],res_dct['35'],res_dct['36'])
-    signallist=[res_dct['29'], res_dct['30'],res_dct['32'],res_dct['33'],res_dct['34'],res_dct['35'],res_dct['36'],res_dct['66'], res_dct['67'],res_dct['68'],res_dct['69'],res_dct['70'],res_dct['71'],res_dct['72']]
+    signallist=[res_dct.get('1'), res_dct.get('2'),res_dct.get('3'),res_dct.get('4'),res_dct.get('5'),res_dct.get('6'),res_dct.get('7'),res_dct.get('8'),res_dct.get('9'), res_dct.get('1_2'),res_dct.get('2_2'),res_dct.get('3_2'),res_dct.get('4_2'),res_dct.get('5_2'),res_dct.get('6_2'),res_dct.get('7_2'),res_dct.get('8_2'),res_dct.get('9_2')]
     return signallist
 
 def finalcsv(finallist):
@@ -145,6 +169,5 @@ while i < linec:
 
  finalcsv(finallist)
  i=i+1
-
 
 
