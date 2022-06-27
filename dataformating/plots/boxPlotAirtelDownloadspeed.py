@@ -7,9 +7,9 @@ print(df)
 q=0
 d={}
 while q<=7:
- a=ps.sqldf("select upload_speed from df where altitude="+str(q))
- print(a["upload_speed"].tolist())
- b=a["upload_speed"].tolist()
+ a=ps.sqldf("select download_speed from df where altitude="+str(q))
+ print(a["download_speed"].tolist())
+ b=a["download_speed"].tolist()
  d.update({q:b})
  #b=list(a)
  print(a) 
